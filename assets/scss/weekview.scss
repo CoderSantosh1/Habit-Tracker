@@ -1,0 +1,79 @@
+body
+{
+    background-image: url('/images/stack-of-notebooks.jpg');
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+#header-div
+{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color: white;
+        display: inline;
+        margin-right: 10%;
+    }
+    
+    button{
+        width: 12%; 
+    height: 32%;
+    font-size: 15px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    margin-right: 4%;
+    background-color: #E8576B;
+    }
+    a{
+        color: white;
+    }
+}
+
+
+#habits-div
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 2%;
+
+    #user-habits
+    {
+        width: 80%;
+        background-color: white;
+        height: 18vh;
+        display: flex;
+        align-items: center;
+        padding: 0 1%;
+        box-sizing: border-box;
+        margin-bottom: 2%;
+
+        h4
+        {
+            color: #37737E;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25px;
+        }
+        div
+        {
+            width: 16%;
+            padding-bottom: 2%;
+        }
+
+
+        button{
+            width: 14%; 
+        height: 3vh;
+        font-size: 15px;
+        border-radius: 50px;
+        border: none;
+        margin-right: 4%;
+        }
+
+    }
+}

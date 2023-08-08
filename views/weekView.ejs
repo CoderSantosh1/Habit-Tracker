@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/weekview.css">
+
+<div id="header-div">
+    <h1>Habits develop into character</h1>
+    <button type="button" id="daily-view"><a href="/habits/dailyView">Show Daily View</a></button>
+</div>
+   
+
+<div id="habits-div">
+    <%for(let habit of habits){%>
+    <div id="user-habits">
+        <h4><%=habit.name%></h4>
+        <%habit.status.reverse().forEach(function(habitstatus){%>
+            <div>
+                <p><%=habitstatus.date%></p>
+
+                <%var bgcolor='#B1B6B6'%>
+               <% if(habitstatus.datestatus!=='Not Started'){%>
+                    <%bgcolor=habitstatus.datestatus=='Done'?'green':'red';}%>
+
+                <button style="background-color:<%=bgcolor%>"><a href="/habits/weeklyView/toggleStatus/?date=<%=habitstatus.date%>&id=<%=habit._id%>">&nbsp</a></button>
+            </div>
+            <%})%>
+    </div>
+    <%}%>
+    </div>

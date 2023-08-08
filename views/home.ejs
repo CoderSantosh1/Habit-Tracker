@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<h1>Track Habits for a better lifestyle</h1>
+
+        <div id="search-div">
+            <form action="/habits/createHabit" method="post" id="select-form">
+                <select name="habits" id="habit-dropdown">
+                    <option value="">Select Habit</option>
+                    <option value="Walk">Walk</option>
+                    <option value="Swim">Swim</option>
+                    <option value="Run">Run</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Exercise">Exercise</option>
+                    <option value="Meditation">Meditation</option>
+                    <option value="Read a Book">Read a Book</option>
+                    <option value="Drink Water">Drink Water</option>
+                    <option value="Eat an Apple">Eat an Apple</option>
+                </select>
+                <button type="submit" id="add-habit">+ Add Habit</button>
+            </form>
+            <form action="/habits/createHabit" method="post" id="type-form">
+                <input type="text" id="custom_meal" name="custom_meal" placeholder="Type any custom meal to add" required>
+                <button type="submit" id="add-custom-meal">Add Custom Habit</button>
+            </form>
+            <button type="button" id="weekly-view"><a href="/habits/weeklyView">Show Weekly View</a></button>
+        </div>
+        <div id="habits-div">
+            <%for(let habit of habits){%>
+                <div id="user-habits">
+
+                    <%for(let habitstatus of habit.status){%>
+                            <%if(habitstatus.date==currdate){%>
+                                <%var status=habitstatus.datestatus%>
+                            <%break}}%>
+                    
+                    <h4><%=habit.name%></h4>
+                    <select name="habit-status" class="habit-status-dropdown" id=<%=habit._id%>>
+
+
+                        <option value="Not Started" <% if (status === "Not Started") { %>selected<% } %>>Not Started</option>
+                        <option value="Done" <% if (status === "Done") { %>selected<% } %>>Done</option>
+                        <option value="Not Done" <% if (status === "Not Done") { %>selected<% } %>>Not Done</option>
+                        
+                    </select>
+                    <button type="button" id="<%=habit._id%>"><a href="/habits/deleteHabit/<%=habit._id%>">Delete Habit</a></button>
+                </div>
+            <%}%>
+            
+
+        <script src="/js/home.js"></script>
+          
+          
+          
+          
+          
+          
+          
